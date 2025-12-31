@@ -415,7 +415,8 @@
             if(mediaItem.isDisplayed) return;
             const el = mediaItem.dom;
             if(mediaItem.type === 'video') { el.muted = true; el.loop = true; el.play().catch(e => {}); }
-            const size = Math.random() * 150 + 100;
+            // 核心修改：将尺寸扩大为原来的两倍（原100-250px → 200-500px）
+            const size = Math.random() * 300 + 200;
             const leftPos = Math.random() * 80 + 10;
             const topPos = Math.random() * 80 + 10;
             el.style.width = size + 'px'; el.style.left = leftPos + '%'; el.style.top = topPos + '%';
